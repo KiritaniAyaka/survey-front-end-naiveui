@@ -40,12 +40,13 @@ export default defineComponent({
   setup() {
     const { proxy } = useCurrentInstance();
     const formRef = ref<FormInst | null>(null)
+		const userValue = ref({
+			username: '',
+			password: '',
+		})
     return {
       formRef,
-      userValue: ref({
-        username: '',
-        password: '',
-      }),
+      userValue,
       rules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
